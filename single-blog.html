@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Як AI-пріоритизація в TaskFlow AI оцінює дедлайни, залежності та навантаження команди.">
+    <meta name="theme-color" content="#6366f1">
+    <script>
+        try {
+            var savedTheme = localStorage.getItem('taskflow-theme');
+            if (savedTheme === 'dark' || savedTheme === 'light') {
+                document.documentElement.setAttribute('data-theme', savedTheme);
+            } else if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
+                document.documentElement.setAttribute('data-theme', 'dark');
+            }
+        } catch (e) {}
+    </script>
+    <title>AI-пріоритизація: як перестати тонути в задачах — Блог TaskFlow AI</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="vendor/glightbox/glightbox.min.css">
+</head>
+<body>
+    <a class="skip-link" href="#main">Перейти до основного вмісту</a>
+    <header class="header" id="top">
+        <div class="container header__inner">
+            <a href="index.html" class="logo" aria-label="TaskFlow AI — на головну">
+                <span class="logo__icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M13 2L3 14h7l-1 8 10-12h-7l1-8z" fill="currentColor"/></svg></span>
+                <span class="logo__text">TaskFlow<strong>AI</strong></span>
+            </a>
+            <nav class="nav" id="nav" aria-label="Головна навігація">
+                <ul class="nav__list">
+                    <li><a class="nav__link" href="index.html#features">Можливості</a></li>
+                    <li><a class="nav__link" href="index.html#how">Як?</a></li>
+                    <li><a class="nav__link" href="index.html#roadmap">Roadmap</a></li>
+                    <li><a class="nav__link" href="index.html#pricing">Тарифи</a></li>
+                    <li><a class="nav__link" href="index.html#faq">FAQ</a></li>
+                    <li><a class="nav__link" href="index.html#contacts">Контакти</a></li>
+                    <li><a class="nav__link is-active" href="blog.html">Блог</a></li>
+                    <li><a class="nav__link nav__link--cta" href="index.html#cta">Спробуй -></a></li>
+                </ul>
+            </nav>
+            <div class="header__actions">
+                <button class="theme-toggle" id="themeToggle" type="button"
+                        aria-label="Перемкнути на темну тему"
+                        aria-pressed="false"
+                        title="Перемкнути тему">
+                    <svg class="theme-toggle__icon theme-toggle__icon--moon" width="20" height="20" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                    <svg class="theme-toggle__icon theme-toggle__icon--sun" width="20" height="20" viewBox="0 0 24 24" fill="none" aria-hidden="true"><circle cx="12" cy="12" r="4" stroke="currentColor" stroke-width="2"/><path d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+                </button>
+                <button class="burger" id="burger" type="button" aria-label="Відкрити меню" aria-expanded="false" aria-controls="nav"><span class="burger__line"></span><span class="burger__line"></span><span class="burger__line"></span></button>
+            </div>
+        </div>
+    </header>
+    <main id="main">
+        <section class="page-hero" aria-labelledby="post-title">
+            <div class="container">
+                <nav class="breadcrumbs" aria-label="Хлібні крихти"><a href="index.html">Головна</a><span aria-hidden="true">/</span><a href="blog.html">Блог</a><span aria-hidden="true">/</span><span aria-current="page">AI-пріоритизація</span></nav>
+                <h1 class="page-hero__title" id="post-title">AI-пріоритизація: як перестати тонути в задачах</h1>
+            </div>
+        </section>
+        <div class="container layout">
+            <article class="article">
+                <div class="article__cover blog-card__cover--1" aria-hidden="true"><span>🎯</span></div>
+                <div class="article__body">
+                    <div class="article__meta"><span class="blog-card__tag">AI</span><time datetime="2026-10-02">2 жовтня 2026</time><span>· 7 хв читання</span></div>
+                    <div class="article__author"><span class="avatar" aria-hidden="true">ОК</span><span><span class="article__author-name">Олена Ковальчук</span><br><span class="article__author-role">CTO, Northwind · запрошений автор</span></span></div>
+                    <div class="article__content">
+                        <p>У більшості команд проблема не в кількості задач, а в порядку їх виконання. Розбираємо, як AI в <a href="index.html#features">TaskFlow AI</a> оцінює дедлайни, залежності та навантаження — і щодня підказує, <mark>що робити першим</mark>.</p>
+
+                        <h2>Що враховує алгоритм</h2>
+                        <p>AI дивиться одразу на чотири фактори: терміновість дедлайну, кількість заблокованих задач, доступність виконавця та історичну швидкість команди. Жодна людина не тримає все це в голові одночасно.</p>
+                        <ul><li><strong>Дедлайни</strong> — з вагою за штрафом прострочення.</li><li><strong>Залежності</strong> — задачі, що блокують інших, піднімаються вище.</li><li><strong>Навантаження</strong> — враховуються зустрічі, відпустки та фокус-час.</li><li><strong>Контекст</strong> — тип задачі та хто її робить найшвидше.</li></ul>
+
+                        <h3>Як зважується кожен фактор</h3>
+                        <p>Вага факторів не статична: модель перенавчається на даних вашої команди щоспринта. Якщо команда стабільно зриває задачі з великою кількістю залежностей — їхня вага зростає автоматично.</p>
+
+                        <figure class="article__figure">
+                            <div class="article__figure-visual"><span aria-hidden="true">⚖️</span><span>Дедлайн × Залежності × Навантаження × Контекст = пріоритет</span></div>
+                            <figcaption>Рис. 1 — спрощена формула скорингу AI-пріоритизації в TaskFlow AI.</figcaption>
+                        </figure>
+
+                        <h2>Порівняння підходів до пріоритизації</h2>
+                        <p>Щоб було наочно, зібрали ручне пріоритезування, класичні фреймворки та AI-підхід в одну таблицю. На вузьких екранах вона прокручується горизонтально.</p>
+                        <div class="table-scroll" tabindex="0" aria-label="Таблиця порівняння підходів — прокручується горизонтально">
+                            <table class="article__table">
+                                <caption>Таблиця 1 — підходи до пріоритизації задач</caption>
+                                <thead>
+                                    <tr><th scope="col">Підхід</th><th scope="col">Час на планування</th><th scope="col">Точність</th><th scope="col">Коли підходить</th></tr>
+                                </thead>
+                                <tbody>
+                                    <tr><td>Ручне пріоритезування</td><td>2–4 години на спринт</td><td>~60%</td><td>Команди до 5 людей</td></tr>
+                                    <tr><td>MoSCoW / RICE</td><td>1–2 години на спринт</td><td>~75%</td><td>Продуктові команди зі стабільним беклогом</td></tr>
+                                    <tr><td>AI-пріоритизація TaskFlow</td><td>~5 хвилин</td><td>94%</td><td>Команди від 5 людей зі змінним навантаженням</td></tr>
+                                </tbody>
+                            </table>
+                        </div>
+
+                        <div class="article__note article__note--info"><strong>Зверніть увагу:</strong> точність 94% — це медіана за 12 000+ команд після першого місяця використання, коли модель уже навчилась на ваших даних.</div>
+
+                        <h2>Як це виглядає на практиці</h2>
+                        <p>Щоранку команда отримує персональний топ-3. Менеджер бачить пояснення кожного рішення: «Піднято, бо блокує реліз мобільного застосунку». Це знімає 90% суперечок про пріоритети.</p>
+
+                        <figure class="article__figure">
+                            <a class="article-media glightbox" href="images/priority-dashboard.svg" data-gallery="article" data-title="Дашборд AI-пріоритетів: топ-3 задачі дня з поясненням кожного рішення">
+                                <img src="images/priority-dashboard.svg" alt="Дашборд AI-пріоритетів TaskFlow AI зі списком задач і підказкою асистента" width="1200" height="700" loading="lazy">
+                                <span class="article-media__zoom" aria-hidden="true"><svg width="15" height="15" viewBox="0 0 24 24" fill="none"><path d="M12 3v18M12 3L8 7M12 3l4 4M12 21l-4-4M12 21l4-4" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg>Збільшити</span>
+                            </a>
+                            <figcaption>Фото 1 — так виглядає ранковий топ-3 пріоритетів. Натисніть, щоб збільшити.</figcaption>
+                        </figure>
+
+                        <blockquote>«AI-підказки — це магія. Він знає про мою команду більше, ніж я сам». — Андрій Мельник, VP Product, Vertex</blockquote>
+
+                        <h3>Покроковий запуск за 10 хвилин</h3>
+                        <ol><li>Увімкніть AI-пріоритизацію в налаштуваннях проєкту.</li><li>Вкажіть ролі учасників та їхні компетенції.</li><li>Зв'яжіть залежні задачі між собою.</li><li>Перевірте перший топ-3 і підтвердіть або скоригуйте порядок.</li></ol>
+
+                        <div class="article__note article__note--tip"><strong>Порада:</strong> перший тиждень підтверджуйте або виправляйте пропозиції AI — так модель швидше навчиться на ваших патернах.</div>
+
+                        <h2>Приклад запиту до AI-асистента</h2>
+                        <p>Пріоритети можна не лише дивитися, а й обговорювати. Використовуйте звичайну мову — як у <code>Slack</code>, тільки з контекстом усього проєкту:</p>
+                        <pre><code>Що заблокувало реліз цього тижня?
+Покажи топ-3 задачі для Олени на завтра
+і поясни, чому саме вони перші.</code></pre>
+
+                        <div class="article__note article__note--warn"><strong>Важливо:</strong> не плануйте команду під 100% завантаження — залишайте ~20% буфера на баги, рев'ю та незаплановані запити.</div>
+
+                        <h2>Галерея: TaskFlow AI в роботі</h2>
+                        <p>Ключові екрани продукту, про які йшлося в статті. Натисніть на будь-яке зображення, щоб відкрити його у збільшеному вигляді — перемикатися можна стрілками.</p>
+                        <div class="gallery">
+                            <a class="gallery__item glightbox" href="images/gallery-1.svg" data-gallery="article" data-title="Автопланування спринтів: від беклогу до плану за 5 хвилин">
+                                <img src="images/gallery-1.svg" alt="Ілюстрація автопланування спринтів" width="1200" height="900" loading="lazy">
+                            </a>
+                            <a class="gallery__item glightbox" href="images/gallery-2.svg" data-gallery="article" data-title="Командна аналітика: швидкість, фокус і якість без мікроменеджменту">
+                                <img src="images/gallery-2.svg" alt="Ілюстрація командної аналітики" width="1200" height="900" loading="lazy">
+                            </a>
+                            <a class="gallery__item glightbox" href="images/gallery-3.svg" data-gallery="article" data-title="Інтеграції: Slack, GitHub, Figma та ще 50+ сервісів">
+                                <img src="images/gallery-3.svg" alt="Ілюстрація інтеграцій із сервісами" width="1200" height="900" loading="lazy">
+                            </a>
+                            <a class="gallery__item glightbox" href="images/gallery-4.svg" data-gallery="article" data-title="AI-асистент у чаті: відповіді природною мовою">
+                                <img src="images/gallery-4.svg" alt="Ілюстрація чату з AI-асистентом" width="1200" height="900" loading="lazy">
+                            </a>
+                        </div>
+
+                        <hr>
+
+                        <h2>Часті запитання про AI-пріоритизацію</h2>
+                        <div class="article__accordion">
+                            <details class="faq-item">
+                                <summary class="faq-item__question">Чи замінить AI менеджера проєкту?<span class="faq-item__icon" aria-hidden="true"></span></summary>
+                                <div class="faq-item__answer"><p>Ні. AI знімає рутину — збір даних, скоринг, чернетку плану. Рішення, комунікація та відповідальність залишаються за людиною.</p></div>
+                            </details>
+                            <details class="faq-item">
+                                <summary class="faq-item__question">Скільки даних потрібно для точних рекомендацій?<span class="faq-item__icon" aria-hidden="true"></span></summary>
+                                <div class="faq-item__answer"><p>Перші корисні підказки з'являються вже в день імпорту. Стабільні 90%+ точності — після 2–3 закритих спринтів.</p></div>
+                            </details>
+                            <details class="faq-item">
+                                <summary class="faq-item__question">Чи можна вручну перевизначити пріоритет?<span class="faq-item__icon" aria-hidden="true"></span></summary>
+                                <div class="faq-item__answer"><p>Так. Перетягніть задачу вгору списку — AI запам'ятає вибір і врахує його в наступних рекомендаціях.</p></div>
+                            </details>
+                            <details class="faq-item">
+                                <summary class="faq-item__question">Де зберігаються дані для навчання моделі?<span class="faq-item__icon" aria-hidden="true"></span></summary>
+                                <div class="faq-item__answer"><p>У дата-центрах ЄС та США на ваш вибір, із шифруванням AES-256 та відповідністю GDPR. Дані однієї команди ніколи не змішуються з іншими.</p></div>
+                            </details>
+                        </div>
+
+                        <h2>З чого почати: чекліст</h2>
+                        <ul class="article__checklist"><li>Імпортуйте задачі з Jira, Trello або Asana.</li><li>Запросіть команду та вкажіть ролі.</li><li>Увімкніть AI-пріоритизацію в проєкті.</li><li>Перевірте перший топ-3 наступного ранку.</li></ul>
+
+                        <div class="article__takeaways">
+                            <h3>Ключові тези статті</h3>
+                            <ul><li>Проблема команд — не кількість задач, а їхній порядок.</li><li>AI враховує дедлайни, залежності, навантаження та контекст одночасно.</li><li>Точність рекомендацій сягає 94% уже за перший місяць.</li><li>Старт займає 10 хвилин: імпорт → ролі → залежності → топ-3.</li></ul>
+                        </div>
+
+                        <h2>Висновок</h2>
+                        <p>Увімкніть AI-пріоритизацію в налаштуваннях проєкту, вкажіть ролі учасників та зв'яжіть залежні задачі. Вже за тиждень команда відчує різницю: менше суперечок, більше закритих задач вчасно. Спробувати можна <a href="index.html#cta">безкоштовно протягом 14 днів</a>.</p>
+                    </div>
+                    <div class="article__tags"><span class="blog-card__tag">#AI</span><span class="blog-card__tag">#пріоритети</span><span class="blog-card__tag">#продуктивність</span></div>
+                    <nav class="article__nav" aria-label="Навігація між статтями"><a href="blog.html">← Назад<span><strong>Усі статті блогу</strong></span></a><a href="blog.html">Усі статті →<strong>Повернутися до блогу</strong></a></nav>
+                    <section class="related" aria-label="Читайте також"><h2 class="related__title">Читайте також</h2><div class="related__grid">
+                        <article class="blog-card"><div class="blog-card__body"><div class="blog-card__meta"><span class="blog-card__tag">AI</span><span>· 6 хв</span></div><h3 class="blog-card__title"><a href="single-blog.html">AI-асистент у чаті: 10 запитів</a></h3><a class="blog-card__more" href="single-blog.html">Читати →</a></div></article>
+                        <article class="blog-card"><div class="blog-card__body"><div class="blog-card__meta"><span class="blog-card__tag">Аналітика</span><span>· 7 хв</span></div><h3 class="blog-card__title"><a href="single-blog.html">Командна аналітика без мікроменеджменту</a></h3><a class="blog-card__more" href="single-blog.html">Читати →</a></div></article>
+                    </div></section>
+                </div>
+            </article>
+            <aside class="sidebar" aria-label="Бокова панель статті">
+                <section class="widget"><h2 class="widget__title">Категорії</h2><ul class="widget__list" role="list"><li><a href="blog.html" class="is-active">AI <span class="widget__count">2</span></a></li><li><a href="blog.html">Процеси <span class="widget__count">1</span></a></li><li><a href="blog.html">Інтеграції <span class="widget__count">1</span></a></li><li><a href="blog.html">Аналітика <span class="widget__count">1</span></a></li></ul></section>
+                <section class="widget"><h2 class="widget__title">Популярне</h2><div class="widget__popular"><a href="single-blog.html"><span class="widget__thumb blog-card__cover--2">🚀</span><span><strong>Автопланування спринтів за 5 хвилин</strong><small>24 вересня 2026</small></span></a><a href="single-blog.html"><span class="widget__thumb blog-card__cover--5">📦</span><span><strong>Переїзд з Jira за один вікенд</strong><small>27 серпня 2026</small></span></a><a href="single-blog.html"><span class="widget__thumb blog-card__cover--3">🔌</span><span><strong>Інтеграції без хаосу</strong><small>15 вересня 2026</small></span></a></div></section>
+                <section class="widget"><h2 class="widget__title">Теги</h2><div class="widget__tags"><a href="blog.html">#AI</a><a href="blog.html">#спринти</a><a href="blog.html">#продуктивність</a></div></section>
+                <section class="widget widget--cta"><h3>Спробуйте TaskFlow AI</h3><p>14 днів безкоштовно. Без кредитної картки.</p><a href="index.html#cta" class="btn btn--primary btn--block">Розпочати</a></section>
+            </aside>
+        </div>
+    </main>
+    <footer class="footer"><div class="container footer__inner"><div class="footer__col footer__col--brand"><a href="index.html" class="logo logo--footer"><span class="logo__icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M13 2L3 14h7l-1 8 10-12h-7l1-8z" fill="currentColor"/></svg></span><span class="logo__text">TaskFlow<strong>AI</strong></span></a><p class="footer__tagline">Розумне управління завданнями для команд, які мислять наперед.</p></div><nav class="footer__col" aria-label="Продукт"><h4 class="footer__title">Продукт</h4><ul class="footer__links" role="list"><li><a href="index.html#features">Можливості</a></li><li><a href="index.html#pricing">Тарифи</a></li><li><a href="blog.html">Блог</a></li><li><a href="index.html#cta">Оновити</a></li></ul></nav><nav class="footer__col" aria-label="Компанія"><h4 class="footer__title">Компанія</h4><ul class="footer__links" role="list"><li><a href="#">Про нас</a></li><li><a href="blog.html">Блог</a></li><li><a href="#">Кар'єра</a></li><li><a href="index.html#contacts">Контакти</a></li></ul></nav><nav class="footer__col" aria-label="Підтримка"><h4 class="footer__title">Підтримка</h4><ul class="footer__links" role="list"><li><a href="index.html#faq">FAQ</a></li><li><a href="#">Документація</a></li><li><a href="#">Статус</a></li><li><a href="privacy.html">Політика конфіденційності</a></li></ul></nav></div><div class="container footer__bottom"><p class="footer__copy">© 2026 TaskFlow AI. Усі права захищено.</p></div></footer>
+    <button class="to-top" id="toTop" type="button" aria-label="Прокрутити нагору"><svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M12 19V5M5 12l7-7 7 7" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg><span>Нагору</span></button>
+    <div class="scroll-progress" id="scrollProgress" aria-hidden="true"></div>
+    <script src="script.js" defer></script>
+    <script src="vendor/glightbox/glightbox.min.js" defer></script>
+    <script src="gallery.js" defer></script>
+</body>
+</html>

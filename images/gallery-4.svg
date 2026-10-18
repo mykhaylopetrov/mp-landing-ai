@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="900" viewBox="0 0 1200 900" role="img" aria-label="Ілюстрація AI-асистента">
+  <defs>
+    <linearGradient id="d" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#8b5cf6"/>
+      <stop offset="1" stop-color="#d946ef"/>
+    </linearGradient>
+  </defs>
+  <rect width="1200" height="900" fill="url(#d)"/>
+  <rect x="250" y="180" width="700" height="150" rx="75" fill="#ffffff" opacity=".95"/>
+  <rect x="250" y="360" width="550" height="150" rx="75" fill="#ffffff" opacity=".55"/>
+  <rect x="400" y="540" width="550" height="150" rx="75" fill="#0f172a" opacity=".85"/>
+  <text x="600" y="275" font-family="Inter, Arial, sans-serif" font-size="44" font-weight="600" fill="#0f172a" text-anchor="middle">Що заблокувало реліз?</text>
+  <text x="600" y="635" font-family="Inter, Arial, sans-serif" font-size="44" font-weight="600" fill="#ffffff" text-anchor="middle">3 задачі. Ось список… ✨</text>
+  <text x="600" y="800" font-family="Inter, Arial, sans-serif" font-size="60" font-weight="800" fill="#ffffff" text-anchor="middle">AI-асистент у чаті</text>
+</svg>

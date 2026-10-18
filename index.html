@@ -1,0 +1,1426 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="TaskFlow AI — розумний менеджер завдань зі штучним інтелектом. Підвищте продуктивність команди на 40% вже за перший місяць.">
+    <meta name="theme-color" content="#6366f1">
+    <script>
+        try {
+            var savedTheme = localStorage.getItem('taskflow-theme');
+            if (savedTheme === 'dark' || savedTheme === 'light') {
+                document.documentElement.setAttribute('data-theme', savedTheme);
+            } else if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
+                document.documentElement.setAttribute('data-theme', 'dark');
+            }
+        } catch (e) {}
+    </script>
+    <title>TaskFlow AI — Розумний менеджер завдань для сучасних команд</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="vendor/swiper/swiper-bundle.min.css">
+    <link rel="stylesheet" href="vendor/glightbox/glightbox.min.css">
+</head>
+<body>
+    <a class="skip-link" href="#main">Перейти до основного вмісту</a>
+
+    <header class="header" id="top">
+        <div class="container header__inner">
+            <a href="index.html" class="logo" aria-label="TaskFlow AI — на головну">
+                <span class="logo__icon" aria-hidden="true">
+                    <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M13 2L3 14h7l-1 8 10-12h-7l1-8z" fill="currentColor"/>
+                    </svg>
+                </span>
+                <span class="logo__text">TaskFlow<strong>AI</strong></span>
+            </a>
+
+            <nav class="nav" id="nav" aria-label="Головна навігація">
+                <ul class="nav__list">
+                    <li><a class="nav__link" href="#features">Можливості</a></li>
+                    <li><a class="nav__link" href="#how">Як?</a></li>
+                    <li><a class="nav__link" href="#roadmap">Roadmap</a></li>
+                    <li><a class="nav__link" href="#pricing">Тарифи</a></li>
+                    <li><a class="nav__link" href="#testimonials">Відгуки</a></li>
+                    <li><a class="nav__link" href="#stories">Історії</a></li>
+                    <li><a class="nav__link" href="#gallery">Галерея</a></li>
+                    <li><a class="nav__link" href="#faq">FAQ</a></li>
+                    <li><a class="nav__link" href="#contacts">Контакти</a></li>
+                    <li><a class="nav__link" href="blog.html">Блог</a></li>
+                    <li><a class="nav__link nav__link--cta" href="#cta">Спробуй -></a></li>
+                </ul>
+            </nav>
+
+            <div class="header__actions">
+                <button class="theme-toggle" id="themeToggle" type="button"
+                        aria-label="Перемкнути на темну тему"
+                        aria-pressed="false"
+                        title="Перемкнути тему">
+                    <svg class="theme-toggle__icon theme-toggle__icon--moon" width="20" height="20" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                    <svg class="theme-toggle__icon theme-toggle__icon--sun" width="20" height="20" viewBox="0 0 24 24" fill="none" aria-hidden="true"><circle cx="12" cy="12" r="4" stroke="currentColor" stroke-width="2"/><path d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+                </button>
+                <button class="burger" id="burger" type="button"
+                        aria-label="Відкрити меню"
+                        aria-expanded="false"
+                        aria-controls="nav">
+                    <span class="burger__line"></span>
+                    <span class="burger__line"></span>
+                    <span class="burger__line"></span>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <main id="main">
+        <section class="hero" aria-labelledby="hero-title">
+            <div class="container hero__inner">
+                <div class="hero__content">
+                    <span class="badge">
+                        <span class="badge__dot" aria-hidden="true"></span>
+                        Новий реліз 3.0 з підтримкою GPT-5
+                    </span>
+                    <h1 class="hero__title" id="hero-title">
+                        Керуйте завданнями зі <span class="gradient-text">штучним інтелектом</span>
+                    </h1>
+                    <p class="hero__subtitle">
+                        TaskFlow AI автоматично пріоритезує задачі, розподіляє навантаження в команді
+                        та передбачає терміни — щоб ви фокусувалися на результаті, а не на процесі.
+                    </p>
+                    <div class="hero__actions">
+                        <a href="#cta" class="btn btn--primary btn--lg">
+                            Розпочати безкоштовно
+                            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+                                <path d="M5 12h14M13 5l7 7-7 7" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                            </svg>
+                        </a>
+                        <button type="button" class="btn btn--outline btn--lg" data-modal-open="demoModal" aria-haspopup="dialog">
+                            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+                                <path d="M8 5v14l11-7z" fill="currentColor"/>
+                            </svg>
+                            Замовити демо
+                        </button>
+                    </div>
+                    <ul class="hero__meta">
+                        <li>
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+                                <path d="M5 13l4 4L19 7" stroke="#10b981" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+                            </svg>
+                            Без кредитної картки
+                        </li>
+                        <li>
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+                                <path d="M5 13l4 4L19 7" stroke="#10b981" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+                            </svg>
+                            14 днів повного доступу
+                        </li>
+                        <li>
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+                                <path d="M5 13l4 4L19 7" stroke="#10b981" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+                            </svg>
+                            Скасування в 1 клік
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="hero__visual" aria-hidden="true">
+                    <div class="hero__card hero__card--main">
+                        <div class="hero__card-header">
+                            <span class="hero__dot"></span>
+                            <span class="hero__dot"></span>
+                            <span class="hero__dot"></span>
+                            <span class="hero__card-title">Sprint #24</span>
+                        </div>
+                        <div class="hero__task hero__task--done">
+                            <span class="hero__check"></span>
+                            <span class="hero__task-text">Дизайн лендінгу</span>
+                            <span class="chip chip--green">Готово</span>
+                        </div>
+                        <div class="hero__task hero__task--active">
+                            <span class="hero__check hero__check--active"></span>
+                            <span class="hero__task-text">AI-пріоритизація</span>
+                            <span class="chip chip--purple">В роботі</span>
+                        </div>
+                        <div class="hero__task">
+                            <span class="hero__check"></span>
+                            <span class="hero__task-text">Інтеграція з Slack</span>
+                            <span class="chip">Черга</span>
+                        </div>
+                        <div class="hero__ai-suggest">
+                            <div class="hero__ai-avatar">AI</div>
+                            <div class="hero__ai-text">
+                                <strong>Підказка:</strong> перенесіть «Тестування API» на завтра —
+                                в Олени 6 годин зустрічей.
+                            </div>
+                        </div>
+                    </div>
+                    <div class="hero__card hero__card--stats">
+                        <div class="hero__stat-num">+42%</div>
+                        <div class="hero__stat-label">продуктивність</div>
+                        <div class="hero__chart">
+                            <span style="--h:40%"></span>
+                            <span style="--h:65%"></span>
+                            <span style="--h:55%"></span>
+                            <span style="--h:80%"></span>
+                            <span style="--h:92%"></span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="logos" aria-label="Нам довіряють">
+            <div class="container">
+                <p class="logos__title">Нам довіряють 12 000+ команд у 47 країнах</p>
+                <ul class="logos__list">
+                    <li>Acme&nbsp;Corp</li>
+                    <li>Northwind</li>
+                    <li>Pioneer</li>
+                    <li>Lumen</li>
+                    <li>Vertex</li>
+                    <li>Quantum</li>
+                </ul>
+            </div>
+        </section>
+
+        <section class="features section" id="features" aria-labelledby="features-title">
+            <div class="container">
+                <header class="section__header">
+                    <span class="section__eyebrow">Можливості</span>
+                    <h2 class="section__title" id="features-title">Усе, що потрібно вашій команді</h2>
+                    <p class="section__subtitle">
+                        Жодних зайвих вкладок і перемикань. Усі інструменти зібрані в єдиному робочому просторі
+                        та посилені AI-асистентом.
+                    </p>
+                </header>
+
+                <ul class="features__grid" role="list">
+                    <li class="feature-card">
+                        <div class="feature-card__icon feature-card__icon--purple" aria-hidden="true">
+                            <svg viewBox="0 0 24 24" fill="none"><path d="M12 2v4M12 18v4M4.93 4.93l2.83 2.83M16.24 16.24l2.83 2.83M2 12h4M18 12h4M4.93 19.07l2.83-2.83M16.24 7.76l2.83-2.83" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+                        </div>
+                        <h3 class="feature-card__title">Розумна пріоритизація</h3>
+                        <p class="feature-card__text">AI аналізує дедлайни, залежності та навантаження, щоб завжди показувати найважливіше.</p>
+                    </li>
+                    <li class="feature-card">
+                        <div class="feature-card__icon feature-card__icon--blue" aria-hidden="true">
+                            <svg viewBox="0 0 24 24" fill="none"><rect x="3" y="4" width="18" height="16" rx="2" stroke="currentColor" stroke-width="2"/><path d="M3 10h18M8 4v4M16 4v4" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+                        </div>
+                        <h3 class="feature-card__title">Автопланування спринтів</h3>
+                        <p class="feature-card__text">Створюйте спринти за секунди — AI розподілить задачі між виконавцями автоматично.</p>
+                    </li>
+                    <li class="feature-card">
+                        <div class="feature-card__icon feature-card__icon--pink" aria-hidden="true">
+                            <svg viewBox="0 0 24 24" fill="none"><path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2" stroke="currentColor" stroke-width="2" stroke-linecap="round"/><circle cx="9" cy="7" r="4" stroke="currentColor" stroke-width="2"/><path d="M23 21v-2a4 4 0 00-3-3.87M16 3.13a4 4 0 010 7.75" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+                        </div>
+                        <h3 class="feature-card__title">Командна аналітика</h3>
+                        <p class="feature-card__text">Відстежуйте швидкість, завантаженість і якість роботи кожного учасника.</p>
+                    </li>
+                    <li class="feature-card">
+                        <div class="feature-card__icon feature-card__icon--green" aria-hidden="true">
+                            <svg viewBox="0 0 24 24" fill="none"><path d="M21 11.5a8.38 8.38 0 01-.9 3.8 8.5 8.5 0 01-7.6 4.7 8.38 8.38 0 01-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 01-.9-3.8 8.5 8.5 0 014.7-7.6 8.38 8.38 0 013.8-.9h.5a8.48 8.48 0 018 8v.5z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                        </div>
+                        <h3 class="feature-card__title">Інтеграції з 50+ сервісами</h3>
+                        <p class="feature-card__text">Slack, GitHub, Figma, Notion, Google Workspace — усе підключається за хвилину.</p>
+                    </li>
+                    <li class="feature-card">
+                        <div class="feature-card__icon feature-card__icon--orange" aria-hidden="true">
+                            <svg viewBox="0 0 24 24" fill="none"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/><path d="M9 12l2 2 4-4" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                        </div>
+                        <h3 class="feature-card__title">Безпека корпоративного рівня</h3>
+                        <p class="feature-card__text">Шифрування AES-256, SOC 2 Type II, GDPR — ваші дані під надійним захистом.</p>
+                    </li>
+                    <li class="feature-card">
+                        <div class="feature-card__icon feature-card__icon--cyan" aria-hidden="true">
+                            <svg viewBox="0 0 24 24" fill="none"><path d="M21 15a2 2 0 01-2 2H7l-4 4V5a2 2 0 012-2h14a2 2 0 012 2v10z" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/></svg>
+                        </div>
+                        <h3 class="feature-card__title">AI-асистент у чаті</h3>
+                        <p class="feature-card__text">Ставте питання природною мовою: «що заблокувало реліз?» — і отримуйте відповідь миттєво.</p>
+                    </li>
+                </ul>
+            </div>
+        </section>
+
+        <section class="showcase section" id="showcase" aria-labelledby="showcase-title">
+            <div class="container">
+                <header class="section__header">
+                    <span class="section__eyebrow">Продукт у дії</span>
+                    <h2 class="section__title" id="showcase-title">Один простір — різні сценарії роботи</h2>
+                    <p class="section__subtitle">
+                        Перемикайте вкладки, щоб побачити, як TaskFlow AI виглядає
+                        для планування, аналітики та щоденної роботи команди.
+                    </p>
+                </header>
+
+                <div class="showcase__tabs" data-tabs>
+                    <div class="showcase__tablist" role="tablist" aria-label="Сценарії роботи в TaskFlow AI">
+                        <button class="showcase__tab is-active" type="button" role="tab"
+                                id="showcase-tab-1" aria-controls="showcase-panel-1" aria-selected="true">
+                            <span class="showcase__tab-icon" aria-hidden="true">🗂️</span>
+                            Усі
+                        </button>
+                        <button class="showcase__tab" type="button" role="tab"
+                                id="showcase-tab-2" aria-controls="showcase-panel-2" aria-selected="false" tabindex="-1">
+                            <span class="showcase__tab-icon" aria-hidden="true">📊</span>
+                            Аналітика
+                        </button>
+                        <button class="showcase__tab" type="button" role="tab"
+                                id="showcase-tab-3" aria-controls="showcase-panel-3" aria-selected="false" tabindex="-1">
+                            <span class="showcase__tab-icon" aria-hidden="true">🤝</span>
+                            Команда
+                        </button>
+                        <button class="showcase__tab" type="button" role="tab"
+                                id="showcase-tab-4" aria-controls="showcase-panel-4" aria-selected="false" tabindex="-1">
+                            <span class="showcase__tab-icon" aria-hidden="true">✨</span>
+                            AI-асистент
+                        </button>
+                    </div>
+
+                    <div class="showcase__panels">
+                        <article class="showcase__panel is-active" role="tabpanel"
+                                 id="showcase-panel-1" aria-labelledby="showcase-tab-1" tabindex="0">
+                            <ul class="showcase__cards" role="list">
+                                <li class="showcase-card">
+                                    <div class="showcase-card__media">
+                                        <img src="https://picsum.photos/id/1050/600/450.jpg" width="600" height="450"
+                                             loading="lazy" decoding="async" alt="Канбан-дошка спринту">
+                                        <span class="showcase-card__tag">Дошка</span>
+                                    </div>
+                                    <div class="showcase-card__body">
+                                        <h4 class="showcase-card__title">Канбан-дошка</h4>
+                                        <p class="showcase-card__text">Перетягуйте задачі між колонками — AI сам підкаже пріоритет і дедлайн.</p>
+                                    </div>
+                                </li>
+                                <li class="showcase-card">
+                                    <div class="showcase-card__media">
+                                        <img src="https://picsum.photos/id/1035/600/450.jpg" width="600" height="450"
+                                             loading="lazy" decoding="async" alt="Беклог продукту">
+                                        <span class="showcase-card__tag">Беклог</span>
+                                    </div>
+                                    <div class="showcase-card__body">
+                                        <h4 class="showcase-card__title">Розумний беклог</h4>
+                                        <p class="showcase-card__text">AI групує схожі задачі, прибирає дублі та оцінює складність.</p>
+                                    </div>
+                                </li>
+                                <li class="showcase-card">
+                                    <div class="showcase-card__media">
+                                        <img src="https://picsum.photos/id/1060/600/450.jpg" width="600" height="450"
+                                             loading="lazy" decoding="async" alt="Ранкове планування спринту за кавою">
+                                        <span class="showcase-card__tag">Спринт</span>
+                                    </div>
+                                    <div class="showcase-card__body">
+                                        <h4 class="showcase-card__title">План спринту</h4>
+                                        <p class="showcase-card__text">Збалансований спринт за хвилину з урахуванням відпусток і зустрічей.</p>
+                                    </div>
+                                </li>
+                                <li class="showcase-card">
+                                    <div class="showcase-card__media">
+                                        <img src="https://picsum.photos/id/1015/600/450.jpg" width="600" height="450"
+                                             loading="lazy" decoding="async" alt="Графік швидкості команди">
+                                        <span class="showcase-card__tag">Velocity</span>
+                                    </div>
+                                    <div class="showcase-card__body">
+                                        <h4 class="showcase-card__title">Velocity команди</h4>
+                                        <p class="showcase-card__text">Динаміка швидкості по спринтах і прогноз дати релізу без ручних звітів.</p>
+                                    </div>
+                                </li>
+                                <li class="showcase-card">
+                                    <div class="showcase-card__media">
+                                        <img src="https://picsum.photos/id/1016/600/450.jpg" width="600" height="450"
+                                             loading="lazy" decoding="async" alt="Burndown-діаграма проєкту">
+                                        <span class="showcase-card__tag">Burndown</span>
+                                    </div>
+                                    <div class="showcase-card__body">
+                                        <h4 class="showcase-card__title">Burndown і ризики</h4>
+                                        <p class="showcase-card__text">AI підсвічує відставання за 5 днів до дедлайну і пропонує рішення.</p>
+                                    </div>
+                                </li>
+                                <li class="showcase-card">
+                                    <div class="showcase-card__media">
+                                        <img src="https://picsum.photos/id/1025/600/450.jpg" width="600" height="450"
+                                             loading="lazy" decoding="async" alt="Учасник команди">
+                                        <span class="showcase-card__tag">Ролі</span>
+                                    </div>
+                                    <div class="showcase-card__body">
+                                        <h4 class="showcase-card__title">Ролі та навички</h4>
+                                        <p class="showcase-card__text">Профілі, компетенції та автоматичний підбір виконавця під задачу.</p>
+                                    </div>
+                                </li>
+                                <li class="showcase-card">
+                                    <div class="showcase-card__media">
+                                        <img src="https://picsum.photos/id/1043/600/450.jpg" width="600" height="450"
+                                             loading="lazy" decoding="async" alt="Вечірній синк команди">
+                                        <span class="showcase-card__tag">Синки</span>
+                                    </div>
+                                    <div class="showcase-card__body">
+                                        <h4 class="showcase-card__title">Без зайвих мітингів</h4>
+                                        <p class="showcase-card__text">Асинхронні апдейти й автозвіти у Slack замість щоденних статусів.</p>
+                                    </div>
+                                </li>
+                                <li class="showcase-card">
+                                    <div class="showcase-card__media">
+                                        <img src="https://picsum.photos/id/1069/600/450.jpg" width="600" height="450"
+                                             loading="lazy" decoding="async" alt="Ретроспектива команди">
+                                        <span class="showcase-card__tag">Ретро</span>
+                                    </div>
+                                    <div class="showcase-card__body">
+                                        <h4 class="showcase-card__title">Ретроспективи</h4>
+                                        <p class="showcase-card__text">AI збирає фідбек спринту і формує 3 головні дії для покращення.</p>
+                                    </div>
+                                </li>
+                                <li class="showcase-card">
+                                    <div class="showcase-card__media">
+                                        <img src="https://picsum.photos/id/1074/600/450.jpg" width="600" height="450"
+                                             loading="lazy" decoding="async" alt="Онбординг новачка в команду">
+                                        <span class="showcase-card__tag">Онбординг</span>
+                                    </div>
+                                    <div class="showcase-card__body">
+                                        <h4 class="showcase-card__title">Онбординг за день</h4>
+                                        <p class="showcase-card__text">Новачок бачить перші задачі, ментора й контекст проєкту одразу.</p>
+                                    </div>
+                                </li>
+                                <li class="showcase-card">
+                                    <div class="showcase-card__media">
+                                        <img src="https://picsum.photos/id/1080/600/450.jpg" width="600" height="450"
+                                             loading="lazy" decoding="async" alt="Розумні підказки AI">
+                                        <span class="showcase-card__tag">Підказки</span>
+                                    </div>
+                                    <div class="showcase-card__body">
+                                        <h4 class="showcase-card__title">Розумні підказки</h4>
+                                        <p class="showcase-card__text">AI радить наступний крок прямо в картці задачі.</p>
+                                    </div>
+                                </li>
+                                <li class="showcase-card">
+                                    <div class="showcase-card__media">
+                                        <img src="https://picsum.photos/id/1084/600/450.jpg" width="600" height="450"
+                                             loading="lazy" decoding="async" alt="Автогенерація описів задач">
+                                        <span class="showcase-card__tag">Тексти</span>
+                                    </div>
+                                    <div class="showcase-card__body">
+                                        <h4 class="showcase-card__title">Описи і чеклісти</h4>
+                                        <p class="showcase-card__text">Генерує структуру задачі з одного речення.</p>
+                                    </div>
+                                </li>
+                                <li class="showcase-card">
+                                    <div class="showcase-card__media">
+                                        <img src="https://picsum.photos/id/1018/600/450.jpg" width="600" height="450"
+                                             loading="lazy" decoding="async" alt="Голосовий AI-асистент">
+                                        <span class="showcase-card__tag">Голос</span>
+                                    </div>
+                                    <div class="showcase-card__body">
+                                        <h4 class="showcase-card__title">Голосовий асистент</h4>
+                                        <p class="showcase-card__text">Ставте питання вголос українською — хоч у дорозі.</p>
+                                    </div>
+                                </li>
+                                <li class="showcase-card">
+                                    <div class="showcase-card__media">
+                                        <img src="https://picsum.photos/id/1039/600/450.jpg" width="600" height="450"
+                                             loading="lazy" decoding="async" alt="Прогнозування термінів">
+                                        <span class="showcase-card__tag">Прогноз</span>
+                                    </div>
+                                    <div class="showcase-card__body">
+                                        <h4 class="showcase-card__title">Прогноз дедлайнів</h4>
+                                        <p class="showcase-card__text">Передбачає зриви термінів за 2 тижні наперед.</p>
+                                    </div>
+                                </li>
+                                <li class="showcase-card">
+                                    <div class="showcase-card__media">
+                                        <img src="https://picsum.photos/id/1041/600/450.jpg" width="600" height="450"
+                                             loading="lazy" decoding="async" alt="Автозвіти для керівника">
+                                        <span class="showcase-card__tag">Звіти</span>
+                                    </div>
+                                    <div class="showcase-card__body">
+                                        <h4 class="showcase-card__title">Автозвіти</h4>
+                                        <p class="showcase-card__text">Щоденний дайджест прогресу падає в пошту о 9:00.</p>
+                                    </div>
+                                </li>
+                            </ul>
+                        </article>
+
+                        <article class="showcase__panel" role="tabpanel"
+                                 id="showcase-panel-2" aria-labelledby="showcase-tab-2" tabindex="0" hidden>
+                            <ul class="showcase__cards" role="list">
+                                <li class="showcase-card">
+                                    <div class="showcase-card__media">
+                                        <img src="https://picsum.photos/id/1015/600/450.jpg" width="600" height="450"
+                                             loading="lazy" decoding="async" alt="Графік швидкості команди">
+                                        <span class="showcase-card__tag">Velocity</span>
+                                    </div>
+                                    <div class="showcase-card__body">
+                                        <h4 class="showcase-card__title">Velocity команди</h4>
+                                        <p class="showcase-card__text">Динаміка швидкості по спринтах і прогноз дати релізу без ручних звітів.</p>
+                                    </div>
+                                </li>
+                                <li class="showcase-card">
+                                    <div class="showcase-card__media">
+                                        <img src="https://picsum.photos/id/1016/600/450.jpg" width="600" height="450"
+                                             loading="lazy" decoding="async" alt="Burndown-діаграма проєкту">
+                                        <span class="showcase-card__tag">Burndown</span>
+                                    </div>
+                                    <div class="showcase-card__body">
+                                        <h4 class="showcase-card__title">Burndown і ризики</h4>
+                                        <p class="showcase-card__text">AI підсвічує відставання за 5 днів до дедлайну і пропонує рішення.</p>
+                                    </div>
+                                </li>
+                            </ul>
+                        </article>
+
+                        <article class="showcase__panel" role="tabpanel"
+                                 id="showcase-panel-3" aria-labelledby="showcase-tab-3" tabindex="0" hidden>
+                            <ul class="showcase__cards" role="list">
+                                <li class="showcase-card">
+                                    <div class="showcase-card__media">
+                                        <img src="https://picsum.photos/id/1025/600/450.jpg" width="600" height="450"
+                                             loading="lazy" decoding="async" alt="Учасник команди">
+                                        <span class="showcase-card__tag">Ролі</span>
+                                    </div>
+                                    <div class="showcase-card__body">
+                                        <h4 class="showcase-card__title">Ролі та навички</h4>
+                                        <p class="showcase-card__text">Профілі, компетенції та автоматичний підбір виконавця під задачу.</p>
+                                    </div>
+                                </li>
+                                <li class="showcase-card">
+                                    <div class="showcase-card__media">
+                                        <img src="https://picsum.photos/id/1043/600/450.jpg" width="600" height="450"
+                                             loading="lazy" decoding="async" alt="Вечірній синк команди">
+                                        <span class="showcase-card__tag">Синки</span>
+                                    </div>
+                                    <div class="showcase-card__body">
+                                        <h4 class="showcase-card__title">Без зайвих мітингів</h4>
+                                        <p class="showcase-card__text">Асинхронні апдейти й автозвіти у Slack замість щоденних статусів.</p>
+                                    </div>
+                                </li>
+                                <li class="showcase-card">
+                                    <div class="showcase-card__media">
+                                        <img src="https://picsum.photos/id/1069/600/450.jpg" width="600" height="450"
+                                             loading="lazy" decoding="async" alt="Ретроспектива команди">
+                                        <span class="showcase-card__tag">Ретро</span>
+                                    </div>
+                                    <div class="showcase-card__body">
+                                        <h4 class="showcase-card__title">Ретроспективи</h4>
+                                        <p class="showcase-card__text">AI збирає фідбек спринту і формує 3 головні дії для покращення.</p>
+                                    </div>
+                                </li>
+                                <li class="showcase-card">
+                                    <div class="showcase-card__media">
+                                        <img src="https://picsum.photos/id/1074/600/450.jpg" width="600" height="450"
+                                             loading="lazy" decoding="async" alt="Онбординг новачка в команду">
+                                        <span class="showcase-card__tag">Онбординг</span>
+                                    </div>
+                                    <div class="showcase-card__body">
+                                        <h4 class="showcase-card__title">Онбординг за день</h4>
+                                        <p class="showcase-card__text">Новачок бачить перші задачі, ментора й контекст проєкту одразу.</p>
+                                    </div>
+                                </li>
+                            </ul>
+                        </article>
+
+                        <article class="showcase__panel" role="tabpanel"
+                                 id="showcase-panel-4" aria-labelledby="showcase-tab-4" tabindex="0" hidden>
+                            <ul class="showcase__cards" role="list">
+                                <li class="showcase-card">
+                                    <div class="showcase-card__media">
+                                        <img src="https://picsum.photos/id/1080/600/450.jpg" width="600" height="450"
+                                             loading="lazy" decoding="async" alt="Розумні підказки AI">
+                                        <span class="showcase-card__tag">Підказки</span>
+                                    </div>
+                                    <div class="showcase-card__body">
+                                        <h4 class="showcase-card__title">Розумні підказки</h4>
+                                        <p class="showcase-card__text">AI радить наступний крок прямо в картці задачі.</p>
+                                    </div>
+                                </li>
+                                <li class="showcase-card">
+                                    <div class="showcase-card__media">
+                                        <img src="https://picsum.photos/id/1084/600/450.jpg" width="600" height="450"
+                                             loading="lazy" decoding="async" alt="Автогенерація описів задач">
+                                        <span class="showcase-card__tag">Тексти</span>
+                                    </div>
+                                    <div class="showcase-card__body">
+                                        <h4 class="showcase-card__title">Описи і чеклісти</h4>
+                                        <p class="showcase-card__text">Генерує структуру задачі з одного речення.</p>
+                                    </div>
+                                </li>
+                                <li class="showcase-card">
+                                    <div class="showcase-card__media">
+                                        <img src="https://picsum.photos/id/1018/600/450.jpg" width="600" height="450"
+                                             loading="lazy" decoding="async" alt="Голосовий AI-асистент">
+                                        <span class="showcase-card__tag">Голос</span>
+                                    </div>
+                                    <div class="showcase-card__body">
+                                        <h4 class="showcase-card__title">Голосовий асистент</h4>
+                                        <p class="showcase-card__text">Ставте питання вголос українською — хоч у дорозі.</p>
+                                    </div>
+                                </li>
+                                <li class="showcase-card">
+                                    <div class="showcase-card__media">
+                                        <img src="https://picsum.photos/id/1039/600/450.jpg" width="600" height="450"
+                                             loading="lazy" decoding="async" alt="Прогнозування термінів">
+                                        <span class="showcase-card__tag">Прогноз</span>
+                                    </div>
+                                    <div class="showcase-card__body">
+                                        <h4 class="showcase-card__title">Прогноз дедлайнів</h4>
+                                        <p class="showcase-card__text">Передбачає зриви термінів за 2 тижні наперед.</p>
+                                    </div>
+                                </li>
+                                <li class="showcase-card">
+                                    <div class="showcase-card__media">
+                                        <img src="https://picsum.photos/id/1041/600/450.jpg" width="600" height="450"
+                                             loading="lazy" decoding="async" alt="Автозвіти для керівника">
+                                        <span class="showcase-card__tag">Звіти</span>
+                                    </div>
+                                    <div class="showcase-card__body">
+                                        <h4 class="showcase-card__title">Автозвіти</h4>
+                                        <p class="showcase-card__text">Щоденний дайджест прогресу падає в пошту о 9:00.</p>
+                                    </div>
+                                </li>
+                            </ul>
+                        </article>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="how section" id="how" aria-labelledby="how-title">
+            <div class="container">
+                <header class="section__header">
+                    <span class="section__eyebrow">Як це працює</span>
+                    <h2 class="section__title" id="how-title">3 кроки до продуктивної команди</h2>
+                    <p class="section__subtitle">
+                        Не потрібно годинами впроваджувати нову систему. TaskFlow AI починає приносити користь
+                        з першої хвилини.
+                    </p>
+                </header>
+
+                <ol class="steps" role="list">
+                    <li class="step">
+                        <div class="step__num">01</div>
+                        <h3 class="step__title">Імпортуйте задачі</h3>
+                        <p class="step__text">Перенесіть проєкти з Jira, Trello, Asana або CSV — AI збереже структуру й історію.</p>
+                    </li>
+                    <li class="step">
+                        <div class="step__num">02</div>
+                        <h3 class="step__title">Налаштуйте команду</h3>
+                        <p class="step__text">Запросіть колег, вкажіть ролі та компетенції — AI врахує це при розподілі задач.</p>
+                    </li>
+                    <li class="step">
+                        <div class="step__num">03</div>
+                        <h3 class="step__title">Працюйте ефективніше</h3>
+                        <p class="step__text">AI підказує, що робити далі, попереджає про ризики та автоматизує рутину.</p>
+                    </li>
+                </ol>
+            </div>
+        </section>
+
+        <section class="stats" aria-labelledby="stats-title">
+            <div class="container">
+                <h2 class="visually-hidden" id="stats-title">Наші досягнення у цифрах</h2>
+                <ul class="stats__list" role="list">
+                    <li class="stat">
+                        <div class="stat__num" data-target="12000">0</div>
+                        <div class="stat__label">активних команд</div>
+                    </li>
+                    <li class="stat">
+                        <div class="stat__num" data-target="42" data-suffix="%">0%</div>
+                        <div class="stat__label">зростання швидкості</div>
+                    </li>
+                    <li class="stat">
+                        <div class="stat__num" data-target="98" data-suffix="%">0%</div>
+                        <div class="stat__label">задоволених клієнтів</div>
+                    </li>
+                    <li class="stat">
+                        <div class="stat__num" data-target="5" data-suffix=" год">0 год</div>
+                        <div class="stat__label">економії на тиждень</div>
+                    </li>
+                </ul>
+            </div>
+        </section>
+
+        <section class="timeline section" id="roadmap" aria-labelledby="roadmap-title">
+            <div class="container">
+                <header class="section__header">
+                    <span class="section__eyebrow">Roadmap</span>
+                    <h2 class="section__title" id="roadmap-title">Шлях розвитку TaskFlow AI</h2>
+                    <p class="section__subtitle">
+                        Від першого прототипу до платформи з підтримкою GPT-5 — кожен крок
+                        наближає нас до місії зробити продуктивність доступною кожній команді.
+                    </p>
+                </header>
+
+                <ol class="timeline__list">
+                    <li class="timeline__item">
+                        <div class="timeline__marker" aria-hidden="true">
+                            <span class="timeline__dot"></span>
+                        </div>
+                        <article class="timeline__content">
+                            <time class="timeline__date" datetime="2023-03">Березень 2023</time>
+                            <h3 class="timeline__title">Заснування компанії</h3>
+                            <p class="timeline__text">
+                                Троє друзів-розробників об'єдналися, щоб вирішити власну проблему —
+                                хаос в управлінні задачами. Перший прототип побачив світ за 90 днів.
+                            </p>
+                        </article>
+                    </li>
+
+                    <li class="timeline__item">
+                        <div class="timeline__marker" aria-hidden="true">
+                            <span class="timeline__dot"></span>
+                        </div>
+                        <article class="timeline__content">
+                            <time class="timeline__date" datetime="2024-06">Червень 2024</time>
+                            <h3 class="timeline__title">Бета-версія для 100 команд</h3>
+                            <p class="timeline__text">
+                                Відкрили ранній доступ для 100 перших команд. За 4 місяці зібрали
+                                2 400 відгуків і зробили 87 покращень продукту.
+                            </p>
+                        </article>
+                    </li>
+
+                    <li class="timeline__item">
+                        <div class="timeline__marker" aria-hidden="true">
+                            <span class="timeline__dot"></span>
+                        </div>
+                        <article class="timeline__content">
+                            <time class="timeline__date" datetime="2025-01">Січень 2025</time>
+                            <h3 class="timeline__title">50+ інтеграцій</h3>
+                            <p class="timeline__text">
+                                Підключили Slack, GitHub, Figma, Notion, Jira та ще 45 сервісів.
+                                Користувачі більше не перемикаються між десятками вкладок.
+                            </p>
+                        </article>
+                    </li>
+
+                    <li class="timeline__item">
+                        <div class="timeline__marker" aria-hidden="true">
+                            <span class="timeline__dot"></span>
+                        </div>
+                        <article class="timeline__content">
+                            <time class="timeline__date" datetime="2025-06">Червень 2025</time>
+                            <h3 class="timeline__title">AI-асистент нового покоління</h3>
+                            <p class="timeline__text">
+                                Запустили AI-помічника, який розуміє контекст проєкту, пріоритети
+                                та навантаження команди. Точність рекомендацій — 94%.
+                            </p>
+                        </article>
+                    </li>
+
+                    <li class="timeline__item">
+                        <div class="timeline__marker" aria-hidden="true">
+                            <span class="timeline__dot"></span>
+                        </div>
+                        <article class="timeline__content">
+                            <time class="timeline__date" datetime="2025-11">Листопад 2025</time>
+                            <h3 class="timeline__title">10 000+ команд та серія A</h3>
+                            <p class="timeline__text">
+                                Долали позначку в 10 тисяч команд з 47 країн. Відкрили офіси
+                                в Берліні та Лісабоні. Залучили $24M інвестицій у раунді серії A.
+                            </p>
+                        </article>
+                    </li>
+
+                    <li class="timeline__item timeline__item--current">
+                        <div class="timeline__marker" aria-hidden="true">
+                            <span class="timeline__dot"></span>
+                        </div>
+                        <article class="timeline__content">
+                            <time class="timeline__date" datetime="2026-08">Серпень 2026</time>
+                            <h3 class="timeline__title">Інтеграція з GPT-5</h3>
+                            <p class="timeline__text">
+                                Впровадили підтримку GPT-5 для предиктивної аналітики та автогенерації
+                                звітів. Наступний крок — голосовий AI-асистент з повною підтримкою
+                                української.
+                            </p>
+                            <span class="timeline__badge">Зараз у релізі</span>
+                        </article>
+                    </li>
+                </ol>
+            </div>
+        </section>
+
+        <section class="pricing section" id="pricing" aria-labelledby="pricing-title">
+            <div class="container">
+                <header class="section__header">
+                    <span class="section__eyebrow">Тарифи</span>
+                    <h2 class="section__title" id="pricing-title">Оберіть план під вашу команду</h2>
+                    <p class="section__subtitle">
+                        Жодних прихованих платежів. Скасування у будь-який час. Знижка 20% при оплаті за рік.
+                    </p>
+                </header>
+
+                <div class="pricing__grid">
+                    <article class="plan">
+                        <header class="plan__header">
+                            <h3 class="plan__name">Starter</h3>
+                            <p class="plan__desc">Для невеликих команд та фрилансерів</p>
+                            <div class="plan__price">
+                                <span class="plan__currency">$</span>
+                                <span class="plan__amount">9</span>
+                                <span class="plan__period">/міс</span>
+                            </div>
+                        </header>
+                        <ul class="plan__features" role="list">
+                            <li>До 5 користувачів</li>
+                            <li>Необмежені задачі</li>
+                            <li>Базовий AI-планувальник</li>
+                            <li>5 інтеграцій</li>
+                            <li>Email-підтримка</li>
+                        </ul>
+                        <a href="#cta" class="btn btn--outline btn--block">Обрати Starter</a>
+                    </article>
+
+                    <article class="plan plan--featured">
+                        <span class="plan__badge">Найпопулярніший</span>
+                        <header class="plan__header">
+                            <h3 class="plan__name">Pro</h3>
+                            <p class="plan__desc">Для зростаючих команд</p>
+                            <div class="plan__price">
+                                <span class="plan__currency">$</span>
+                                <span class="plan__amount">24</span>
+                                <span class="plan__period">/міс</span>
+                            </div>
+                        </header>
+                        <ul class="plan__features" role="list">
+                            <li>До 25 користувачів</li>
+                            <li>Розширена AI-аналітика</li>
+                            <li>Необмежені інтеграції</li>
+                            <li>Пріоритетна підтримка 24/7</li>
+                            <li>SSO та 2FA</li>
+                            <li>Аудит дій</li>
+                        </ul>
+                        <a href="#cta" class="btn btn--primary btn--block">Обрати Pro</a>
+                    </article>
+
+                    <article class="plan">
+                        <header class="plan__header">
+                            <h3 class="plan__name">Enterprise</h3>
+                            <p class="plan__desc">Для великих організацій</p>
+                            <div class="plan__price">
+                                <span class="plan__amount plan__amount--custom">Custom</span>
+                            </div>
+                        </header>
+                        <ul class="plan__features" role="list">
+                            <li>Необмежені користувачі</li>
+                            <li>Виділений AI-менеджер</li>
+                            <li>SLA 99.99% uptime</li>
+                            <li>SAML, SCIM, on-premise</li>
+                            <li>Персональний менеджер</li>
+                            <li>Кастомні інтеграції</li>
+                        </ul>
+                        <a href="#cta" class="btn btn--outline btn--block">Зв'язатися з нами</a>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <section class="testimonials section" id="testimonials" aria-labelledby="testimonials-title">
+            <div class="container">
+                <header class="section__header">
+                    <span class="section__eyebrow">Відгуки</span>
+                    <h2 class="section__title" id="testimonials-title">Що кажуть наші клієнти</h2>
+                </header>
+
+                <ul class="testimonials__grid" role="list">
+                    <li class="testimonial">
+                        <div class="testimonial__stars" aria-label="Оцінка 5 з 5">★★★★★</div>
+                        <blockquote class="testimonial__quote">
+                            «За перший місяць ми скоротили кількість мітингів на 30% і прискорили релізи вдвічі.
+                            Це як найняти ще одного PM, тільки дешевше».
+                        </blockquote>
+                        <footer class="testimonial__person">
+                            <div class="avatar" aria-hidden="true">ОК</div>
+                            <div>
+                                <div class="testimonial__name">Олена Ковальчук</div>
+                                <div class="testimonial__role">CTO, Northwind</div>
+                            </div>
+                        </footer>
+                    </li>
+                    <li class="testimonial">
+                        <div class="testimonial__stars" aria-label="Оцінка 5 з 5">★★★★★</div>
+                        <blockquote class="testimonial__quote">
+                            «AI-підказки — це магія. Він знає про мою команду більше, ніж я сам.
+                            Жодного разу не помилився у пріоритетах».
+                        </blockquote>
+                        <footer class="testimonial__person">
+                            <div class="avatar" aria-hidden="true">АМ</div>
+                            <div>
+                                <div class="testimonial__name">Андрій Мельник</div>
+                                <div class="testimonial__role">VP Product, Vertex</div>
+                            </div>
+                        </footer>
+                    </li>
+                    <li class="testimonial">
+                        <div class="testimonial__stars" aria-label="Оцінка 5 з 5">★★★★★</div>
+                        <blockquote class="testimonial__quote">
+                            «Перевели 200 людей з Jira за один вікенд. Жодних скарг, жодних втрачених даних.
+                            Підтримка спрацювала ідеально».
+                        </blockquote>
+                        <footer class="testimonial__person">
+                            <div class="avatar" aria-hidden="true">ІС</div>
+                            <div>
+                                <div class="testimonial__name">Ірина Семенюк</div>
+                                <div class="testimonial__role">Head of Ops, Lumen</div>
+                            </div>
+                        </footer>
+                    </li>
+                </ul>
+            </div>
+        </section>
+
+        <section class="stories section" id="stories" aria-labelledby="stories-title">
+            <div class="container">
+                <header class="section__header">
+                    <span class="section__eyebrow">Ще історії</span>
+                    <h2 class="section__title" id="stories-title">Більше відгуків наших клієнтів</h2>
+                    <p class="section__subtitle">
+                        Понад 12 000 команд щодня покладаються на TaskFlow AI. Прокручуйте,
+                        щоб дізнатись, як вони прискорюють роботу та масштабують процеси.
+                    </p>
+                </header>
+
+                <div class="stories__slider swiper">
+                    <ul class="stories__list swiper-wrapper" role="list">
+                        <li class="story swiper-slide">
+                            <div class="story__rating" aria-label="Оцінка 5 з 5">★★★★★</div>
+                            <blockquote class="story__quote">
+                                «За перший квартал з TaskFlow AI ми скоротили time-to-market
+                                на 38%. Тепер кожен спринт починається з чіткого плану, а не хаосу».
+                            </blockquote>
+                            <footer class="story__person">
+                                <div class="avatar" aria-hidden="true">МШ</div>
+                                <div>
+                                    <div class="story__name">Маркіян Шевчук</div>
+                                    <div class="story__role">CEO, Acme Corp</div>
+                                </div>
+                            </footer>
+                        </li>
+
+                        <li class="story swiper-slide">
+                            <div class="story__rating" aria-label="Оцінка 5 з 5">★★★★★</div>
+                            <blockquote class="story__quote">
+                                «AI-асистент бачить мою команду краще, ніж я сама. Він щоранку
+                                нагадує, хто сьогодні перевантажений, і пропонує перебалансувати».
+                            </blockquote>
+                            <footer class="story__person">
+                                <div class="avatar" aria-hidden="true">ЮП</div>
+                                <div>
+                                    <div class="story__name">Юлія Петренко</div>
+                                    <div class="story__role">Product Lead, Pioneer</div>
+                                </div>
+                            </footer>
+                        </li>
+
+                        <li class="story swiper-slide">
+                            <div class="story__rating" aria-label="Оцінка 5 з 5">★★★★★</div>
+                            <blockquote class="story__quote">
+                                «Наша команда з 40 інженерів нарешті має єдине джерело правди.
+                                Жодних статус-мітингів о 9 ранку — все видно на дошці».
+                            </blockquote>
+                            <footer class="story__person">
+                                <div class="avatar" aria-hidden="true">ДК</div>
+                                <div>
+                                    <div class="story__name">Дмитро Кравченко</div>
+                                    <div class="story__role">Engineering Manager, Quantum</div>
+                                </div>
+                            </footer>
+                        </li>
+
+                        <li class="story swiper-slide">
+                            <div class="story__rating" aria-label="Оцінка 5 з 5">★★★★★</div>
+                            <blockquote class="story__quote">
+                                «Перевели 5 департаментів з різних інструментів на TaskFlow AI
+                                за два тижні. Підтримка спрацювала бездоганно, жодних втрачених даних».
+                            </blockquote>
+                            <footer class="story__person">
+                                <div class="avatar" aria-hidden="true">СЛ</div>
+                                <div>
+                                    <div class="story__name">Софія Левченко</div>
+                                    <div class="story__role">COO, Lumen</div>
+                                </div>
+                            </footer>
+                        </li>
+
+                        <li class="story swiper-slide">
+                            <div class="story__rating" aria-label="Оцінка 5 з 5">★★★★★</div>
+                            <blockquote class="story__quote">
+                                «Як дизайн-лідер я ціную, що AI розуміє контекст задач.
+                                Він не просто пріоритезує — він пояснює, чому саме так».
+                            </blockquote>
+                            <footer class="story__person">
+                                <div class="avatar" aria-hidden="true">ТБ</div>
+                                <div>
+                                    <div class="story__name">Тарас Білоус</div>
+                                    <div class="story__role">Head of Design, Vertex</div>
+                                </div>
+                            </footer>
+                        </li>
+
+                        <li class="story swiper-slide">
+                            <div class="story__rating" aria-label="Оцінка 5 з 5">★★★★★</div>
+                            <blockquote class="story__quote">
+                                «Маленька студія з 6 людей — і ми конкуруємо з компаніями,
+                                де працюють 50. TaskFlow AI — це наш невидимий продакт-менеджер».
+                            </blockquote>
+                            <footer class="story__person">
+                                <div class="avatar" aria-hidden="true">АГ</div>
+                                <div>
+                                    <div class="story__name">Анастасія Гайдай</div>
+                                    <div class="story__role">Founder, Notion Studio</div>
+                                </div>
+                            </footer>
+                        </li>
+                    </ul>
+
+                    <button class="stories__nav stories__nav--prev" type="button" aria-label="Попередній відгук">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+                            <path d="M15 18l-6-6 6-6" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
+                    </button>
+                    <button class="stories__nav stories__nav--next" type="button" aria-label="Наступний відгук">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+                            <path d="M9 18l6-6-6-6" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
+                    </button>
+
+                    <div class="stories__pagination swiper-pagination" aria-label="Пагінація відгуків"></div>
+                </div>
+            </div>
+        </section>
+
+        <section class="masonry-gallery section" id="gallery" aria-labelledby="gallery-title">
+            <div class="container">
+                <header class="section__header">
+                    <span class="section__eyebrow">Галерея</span>
+                    <h2 class="section__title" id="gallery-title">Життя команди в кадрі</h2>
+                    <p class="section__subtitle">
+                        Робочі моменти, зустрічі та натхнення наших користувачів —
+                        добірка світлин з онлайн-сервісу picsum.photos.
+                    </p>
+                </header>
+
+                <ul class="masonry-gallery__grid" role="list">
+                    <li class="masonry-gallery__item">
+                        <a class="masonry-gallery__link glightbox" href="https://picsum.photos/id/1015/1200/1600.jpg" data-type="image" data-gallery="masonry" data-title="Гірська річка серед скель">
+                            <img src="https://picsum.photos/id/1015/600/800.jpg" width="600" height="800" loading="lazy" decoding="async" alt="Гірська річка серед скель">
+                        </a>
+                    </li>
+                    <li class="masonry-gallery__item">
+                        <a class="masonry-gallery__link glightbox" href="https://picsum.photos/id/1016/1200/900.jpg" data-type="image" data-gallery="masonry" data-title="Каньйон на заході сонця">
+                            <img src="https://picsum.photos/id/1016/600/450.jpg" width="600" height="450" loading="lazy" decoding="async" alt="Каньйон на заході сонця">
+                        </a>
+                    </li>
+                    <li class="masonry-gallery__item">
+                        <a class="masonry-gallery__link glightbox" href="https://picsum.photos/id/1018/1200/1400.jpg" data-type="image" data-gallery="masonry" data-title="Гірське озеро в горах">
+                            <img src="https://picsum.photos/id/1018/600/700.jpg" width="600" height="700" loading="lazy" decoding="async" alt="Гірське озеро в горах">
+                        </a>
+                    </li>
+                    <li class="masonry-gallery__item">
+                        <a class="masonry-gallery__link glightbox" href="https://picsum.photos/id/1025/1200/1200.jpg" data-type="image" data-gallery="masonry" data-title="Мопс у ковдрі">
+                            <img src="https://picsum.photos/id/1025/600/600.jpg" width="600" height="600" loading="lazy" decoding="async" alt="Мопс у ковдрі">
+                        </a>
+                    </li>
+                    <li class="masonry-gallery__item">
+                        <a class="masonry-gallery__link glightbox" href="https://picsum.photos/id/1035/1200/1800.jpg" data-type="image" data-gallery="masonry" data-title="Туман над горами">
+                            <img src="https://picsum.photos/id/1035/600/900.jpg" width="600" height="900" loading="lazy" decoding="async" alt="Туман над горами">
+                        </a>
+                    </li>
+                    <li class="masonry-gallery__item">
+                        <a class="masonry-gallery__link glightbox" href="https://picsum.photos/id/1043/1200/1000.jpg" data-type="image" data-gallery="masonry" data-title="Прогулянка вночі під ліхтарями">
+                            <img src="https://picsum.photos/id/1043/600/500.jpg" width="600" height="500" loading="lazy" decoding="async" alt="Прогулянка вночі під ліхтарями">
+                        </a>
+                    </li>
+                    <li class="masonry-gallery__item">
+                        <a class="masonry-gallery__link glightbox" href="https://picsum.photos/id/1050/1200/1500.jpg" data-type="image" data-gallery="masonry" data-title="Електричні лампочки на стіні">
+                            <img src="https://picsum.photos/id/1050/600/750.jpg" width="600" height="750" loading="lazy" decoding="async" alt="Електричні лампочки на стіні">
+                        </a>
+                    </li>
+                    <li class="masonry-gallery__item">
+                        <a class="masonry-gallery__link glightbox" href="https://picsum.photos/id/1060/1200/1100.jpg" data-type="image" data-gallery="masonry" data-title="Чашка кави на столі">
+                            <img src="https://picsum.photos/id/1060/600/550.jpg" width="600" height="550" loading="lazy" decoding="async" alt="Чашка кави на столі">
+                        </a>
+                    </li>
+                    <li class="masonry-gallery__item">
+                        <a class="masonry-gallery__link glightbox" href="https://picsum.photos/id/1069/1200/1700.jpg" data-type="image" data-gallery="masonry" data-title="Туманний ліс з променями світла">
+                            <img src="https://picsum.photos/id/1069/600/850.jpg" width="600" height="850" loading="lazy" decoding="async" alt="Туманний ліс з променями світла">
+                        </a>
+                    </li>
+                    <li class="masonry-gallery__item">
+                        <a class="masonry-gallery__link glightbox" href="https://picsum.photos/id/1074/1200/960.jpg" data-type="image" data-gallery="masonry" data-title="Лев з левеням">
+                            <img src="https://picsum.photos/id/1074/600/480.jpg" width="600" height="480" loading="lazy" decoding="async" alt="Лев з левеням">
+                        </a>
+                    </li>
+                    <li class="masonry-gallery__item">
+                        <a class="masonry-gallery__link glightbox" href="https://picsum.photos/id/1080/1200/1300.jpg" data-type="image" data-gallery="masonry" data-title="Полуниця на столі">
+                            <img src="https://picsum.photos/id/1080/600/650.jpg" width="600" height="650" loading="lazy" decoding="async" alt="Полуниця на столі">
+                        </a>
+                    </li>
+                    <li class="masonry-gallery__item">
+                        <a class="masonry-gallery__link glightbox" href="https://picsum.photos/id/1084/1200/1560.jpg" data-type="image" data-gallery="masonry" data-title="Морж на камені">
+                            <img src="https://picsum.photos/id/1084/600/780.jpg" width="600" height="780" loading="lazy" decoding="async" alt="Морж на камені">
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </section>
+
+        <section class="blog-preview section" id="blog" aria-labelledby="blog-title">
+            <div class="container">
+                <header class="section__header">
+                    <span class="section__eyebrow">Блог</span>
+                    <h2 class="section__title" id="blog-title">Останнє з блогу</h2>
+                    <p class="section__subtitle">
+                        Практичні гайди про AI-пріоритизацію, планування спринтів
+                        та продуктивність команд — без води.
+                    </p>
+                </header>
+
+                <ul class="blog-grid" role="list">
+                    <li>
+                        <article class="blog-card">
+                            <a class="blog-card__cover blog-card__cover--1" href="single-blog.html" aria-hidden="true" tabindex="-1">
+                                <span class="blog-card__emoji">🎯</span>
+                            </a>
+                            <div class="blog-card__body">
+                                <div class="blog-card__meta">
+                                    <span class="blog-card__tag">AI</span>
+                                    <time datetime="2026-10-02">2 жовтня 2026</time>
+                                    <span>· 7 хв читання</span>
+                                </div>
+                                <h3 class="blog-card__title">
+                                    <a href="single-blog.html">AI-пріоритизація: як перестати тонути в задачах</a>
+                                </h3>
+                                <p class="blog-card__text">
+                                    Розбираємо, як AI оцінює дедлайни, залежності та навантаження команди —
+                                    і чому це точніше за ручне пріоритезування.
+                                </p>
+                                <a class="blog-card__more" href="single-blog.html">Читати статтю →</a>
+                            </div>
+                        </article>
+                    </li>
+                    <li>
+                        <article class="blog-card">
+                            <a class="blog-card__cover blog-card__cover--2" href="single-blog.html" aria-hidden="true" tabindex="-1">
+                                <span class="blog-card__emoji">🚀</span>
+                            </a>
+                            <div class="blog-card__body">
+                                <div class="blog-card__meta">
+                                    <span class="blog-card__tag">Процеси</span>
+                                    <time datetime="2026-09-24">24 вересня 2026</time>
+                                    <span>· 6 хв читання</span>
+                                </div>
+                                <h3 class="blog-card__title">
+                                    <a href="single-blog.html">Автопланування спринтів за 5 хвилин</a>
+                                </h3>
+                                <p class="blog-card__text">
+                                    Покроковий сценарій: від імпорту беклогу до збалансованого спринта
+                                    без вечірніх суперечок на плануванні.
+                                </p>
+                                <a class="blog-card__more" href="single-blog.html">Читати статтю →</a>
+                            </div>
+                        </article>
+                    </li>
+                    <li>
+                        <article class="blog-card">
+                            <a class="blog-card__cover blog-card__cover--3" href="single-blog.html" aria-hidden="true" tabindex="-1">
+                                <span class="blog-card__emoji">🔌</span>
+                            </a>
+                            <div class="blog-card__body">
+                                <div class="blog-card__meta">
+                                    <span class="blog-card__tag">Інтеграції</span>
+                                    <time datetime="2026-09-15">15 вересня 2026</time>
+                                    <span>· 5 хв читання</span>
+                                </div>
+                                <h3 class="blog-card__title">
+                                    <a href="single-blog.html">Slack, GitHub, Figma: інтеграції без хаосу</a>
+                                </h3>
+                                <p class="blog-card__text">
+                                    Як зв'язати 50+ сервісів в один робочий простір і не потонути
+                                    в сповіщеннях. Чекліст налаштування.
+                                </p>
+                                <a class="blog-card__more" href="single-blog.html">Читати статтю →</a>
+                            </div>
+                        </article>
+                    </li>
+                </ul>
+
+                <div class="blog-preview__more">
+                    <a href="blog.html" class="btn btn--outline btn--lg">Усі статті блогу →</a>
+                </div>
+            </div>
+        </section>
+
+        <section class="faq section" id="faq" aria-labelledby="faq-title">
+            <div class="container container--narrow">
+                <header class="section__header">
+                    <span class="section__eyebrow">FAQ</span>
+                    <h2 class="section__title" id="faq-title">Часті запитання</h2>
+                </header>
+
+                <div class="faq__list">
+                    <details class="faq-item">
+                        <summary class="faq-item__question">
+                            Чи потрібна кредитна картка для старту?
+                            <span class="faq-item__icon" aria-hidden="true"></span>
+                        </summary>
+                        <div class="faq-item__answer">
+                            <p>Ні. Ви отримуєте 14 днів повного доступу до Pro-версії без будь-яких платіжних даних.
+                            Після закінчення тестового періоду ви можете обрати тариф або продовжити безкоштовно з обмеженнями Starter.</p>
+                        </div>
+                    </details>
+                    <details class="faq-item">
+                        <summary class="faq-item__question">
+                            Чи можна імпортувати дані з Jira чи Asana?
+                            <span class="faq-item__icon" aria-hidden="true"></span>
+                        </summary>
+                        <div class="faq-item__answer">
+                            <p>Так, ми підтримуємо міграцію з Jira, Asana, Trello, ClickUp, Notion та CSV-файлів.
+                            Імпорт відбувається за кілька хвилин зі збереженням історії, коментарів та файлів.</p>
+                        </div>
+                    </details>
+                    <details class="faq-item">
+                        <summary class="faq-item__question">
+                            Наскільки безпечні мої дані?
+                            <span class="faq-item__icon" aria-hidden="true"></span>
+                        </summary>
+                        <div class="faq-item__answer">
+                            <p>Ми використовуємо шифрування AES-256, маємо сертифікати SOC 2 Type II та ISO 27001,
+                            повністю відповідаємо GDPR. Дані зберігаються в дата-центрах ЄС та США на ваш вибір.</p>
+                        </div>
+                    </details>
+                    <details class="faq-item">
+                        <summary class="faq-item__question">
+                            Чи є мобільний додаток?
+                            <span class="faq-item__icon" aria-hidden="true"></span>
+                        </summary>
+                        <div class="faq-item__answer">
+                            <p>Так, native-додатки для iOS та Android повністю синхронізуються з веб-версією
+                            та підтримують push-сповіщення, офлайн-режим і голосові підказки для AI.</p>
+                        </div>
+                    </details>
+                    <details class="faq-item">
+                        <summary class="faq-item__question">
+                            Чи можна скасувати підписку в будь-який час?
+                            <span class="faq-item__icon" aria-hidden="true"></span>
+                        </summary>
+                        <div class="faq-item__answer">
+                            <p>Звичайно. Скасування — у 1 клік в налаштуваннях акаунта. Ваші дані зберігаються
+                            протягом 90 днів, протягом яких можна відновити доступ або експортувати все у JSON.</p>
+                        </div>
+                    </details>
+                </div>
+            </div>
+        </section>
+
+        <section class="contacts section" id="contacts" aria-labelledby="contacts-title">
+            <div class="container">
+                <header class="section__header">
+                    <span class="section__eyebrow">Контакти</span>
+                    <h2 class="section__title" id="contacts-title">Зв'яжіться з нами</h2>
+                    <p class="section__subtitle">
+                        Маєте питання, ідею чи хочете обговорити співпрацю? Оберіть зручний канал —
+                        відповімо протягом одного робочого дня.
+                    </p>
+                </header>
+
+                <div class="contacts__grid">
+                    <ul class="contacts__list" role="list">
+                        <li class="contact-card">
+                            <div class="contact-card__icon contact-card__icon--purple" aria-hidden="true">
+                                <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M4 6c0-1.1.9-2 2-2h12a2 2 0 0 1 2 2v.5l-8 5-8-5V6z" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/><path d="M4 8.5V18a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8.5l-8 5-8-5z" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/></svg>
+                            </div>
+                            <h3 class="contact-card__title">Email</h3>
+                            <p class="contact-card__text">Для загальних питань та підтримки клієнтів.</p>
+                            <a class="contact-card__link" href="mailto:hello@taskflow.ai">hello@taskflow.ai</a>
+                        </li>
+                        <li class="contact-card">
+                            <div class="contact-card__icon contact-card__icon--blue" aria-hidden="true">
+                                <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                            </div>
+                            <h3 class="contact-card__title">Телефон</h3>
+                            <p class="contact-card__text">Пн-Пт, 09:00 – 18:00 (CET).</p>
+                            <a class="contact-card__link" href="tel:+380443330022">+380 44 333 00 22</a>
+                        </li>
+                        <li class="contact-card">
+                            <div class="contact-card__icon contact-card__icon--green" aria-hidden="true">
+                                <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><circle cx="12" cy="10" r="3" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                            </div>
+                            <h3 class="contact-card__title">Берлін</h3>
+                            <p class="contact-card__text">Штаб-квартира, Sales та Customer Success.</p>
+                            <address class="contact-card__link">Friedrichstraße 123, 10117 Berlin</address>
+                        </li>
+                        <li class="contact-card">
+                            <div class="contact-card__icon contact-card__icon--pink" aria-hidden="true">
+                                <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M3 21h18M5 21V8l7-4 7 4v13M9 21v-6h6v6" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/></svg>
+                            </div>
+                            <h3 class="contact-card__title">Лісабон</h3>
+                            <p class="contact-card__text">R&amp;D та європейський хаб розробки.</p>
+                            <address class="contact-card__link">Av. da Liberdade 110, 1269-046 Lisboa</address>
+                        </li>
+                    </ul>
+
+                    <form class="contacts__form" id="contactsForm" novalidate>
+                        <h3 class="contacts__form-title">Напишіть нам</h3>
+                        <p class="contacts__form-subtitle">Заповніть форму — відповімо протягом 1 робочого дня.</p>
+                        <div class="contacts__form-row">
+                            <label class="contacts__field">
+                                <span class="contacts__label">Ім'я</span>
+                                <input type="text" name="name" required minlength="2" autocomplete="given-name" placeholder="Ваше ім'я">
+                            </label>
+                            <label class="contacts__field">
+                                <span class="contacts__label">Email</span>
+                                <input type="email" name="email" required autocomplete="email" placeholder="ваш@email.com">
+                            </label>
+                        </div>
+                        <label class="contacts__field">
+                            <span class="contacts__label">Тема</span>
+                            <input type="text" name="subject" required placeholder="Про що хочете поговорити?">
+                        </label>
+                        <label class="contacts__field">
+                            <span class="contacts__label">Повідомлення</span>
+                            <textarea name="message" rows="5" required placeholder="Розкажіть детальніше..."></textarea>
+                        </label>
+                        <button type="submit" class="btn btn--primary btn--lg btn--block">
+                            Надіслати повідомлення
+                        </button>
+                        <p class="contacts__success" hidden>
+                            Дякуємо! Повідомлення надіслано. Ми зв'яжемося з вами найближчим часом ✨
+                        </p>
+                    </form>
+                </div>
+            </div>
+        </section>
+
+        <section class="cta section" id="cta" aria-labelledby="cta-title">
+            <div class="container">
+                <div class="cta__box">
+                    <div class="cta__bg" aria-hidden="true"></div>
+                    <div class="cta__content">
+                        <h2 class="cta__title" id="cta-title">Готові вивести команду на новий рівень?</h2>
+                        <p class="cta__text">
+                            Приєднуйтесь до 12 000+ команд, які вже працюють ефективніше з TaskFlow AI.
+                            14 днів — безкоштовно, без кредитної картки.
+                        </p>
+                        <form class="cta__form" novalidate>
+                            <label class="visually-hidden" for="email">Email</label>
+                            <input class="cta__input" type="email" id="email" name="email"
+                                   placeholder="ваш@email.com" required autocomplete="email">
+                            <button class="btn btn--primary btn--lg" type="submit">
+                                Розпочати безкоштовно
+                            </button>
+                        </form>
+                        <p class="cta__note">Натискаючи кнопку, ви погоджуєтеся з умовами використання.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <div class="container footer__inner">
+            <div class="footer__col footer__col--brand">
+                <a href="index.html" class="logo logo--footer">
+                    <span class="logo__icon" aria-hidden="true">
+                        <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M13 2L3 14h7l-1 8 10-12h-7l1-8z" fill="currentColor"/>
+                        </svg>
+                    </span>
+                    <span class="logo__text">TaskFlow<strong>AI</strong></span>
+                </a>
+                <p class="footer__tagline">Розумне управління завданнями для команд, які мислять наперед.</p>
+                <ul class="footer__socials" role="list">
+                    <li><a href="#" aria-label="Twitter">𝕏</a></li>
+                    <li><a href="#" aria-label="LinkedIn">in</a></li>
+                    <li><a href="#" aria-label="GitHub">⌥</a></li>
+                    <li><a href="#" aria-label="YouTube">▶</a></li>
+                </ul>
+            </div>
+
+            <nav class="footer__col" aria-label="Продукт">
+                <h4 class="footer__title">Продукт</h4>
+                <ul class="footer__links" role="list">
+                    <li><a href="#features">Можливості</a></li>
+                    <li><a href="#pricing">Тарифи</a></li>
+                    <li><a href="#how">Інтеграції</a></li>
+                    <li><a href="#gallery">Галерея</a></li>
+                    <li><a href="#cta">Оновити</a></li>
+                </ul>
+            </nav>
+
+            <nav class="footer__col" aria-label="Компанія">
+                <h4 class="footer__title">Компанія</h4>
+                <ul class="footer__links" role="list">
+                    <li><a href="#">Про нас</a></li>
+                    <li><a href="blog.html">Блог</a></li>
+                    <li><a href="#">Кар'єра</a></li>
+                    <li><a href="#contacts">Контакти</a></li>
+                </ul>
+            </nav>
+
+            <nav class="footer__col" aria-label="Підтримка">
+                <h4 class="footer__title">Підтримка</h4>
+                <ul class="footer__links" role="list">
+                    <li><a href="#faq">FAQ</a></li>
+                    <li><a href="#">Документація</a></li>
+                    <li><a href="#">Статус</a></li>
+                    <li><a href="privacy.html">Політика конфіденційності</a></li>
+                </ul>
+            </nav>
+        </div>
+
+        <div class="container footer__bottom">
+            <p class="footer__copy">© 2026 TaskFlow AI. Усі права захищено.</p>
+        </div>
+    </footer>
+
+    <button class="to-top" id="toTop" type="button" aria-label="Прокрутити нагору">
+        <svg viewBox="0 0 24 24" fill="none" aria-hidden="true">
+            <path d="M12 19V5M5 12l7-7 7 7" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+        <span>Нагору</span>
+    </button>
+
+    <div class="scroll-progress" id="scrollProgress" aria-hidden="true"></div>
+
+    <div class="modal" id="demoModal" role="dialog" aria-modal="true" aria-labelledby="demoModalTitle" aria-hidden="true">
+        <div class="modal__backdrop" data-modal-close></div>
+        <div class="modal__dialog" role="document">
+            <button type="button" class="modal__close" data-modal-close aria-label="Закрити вікно">
+                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+                    <path d="M6 6l12 12M18 6L6 18" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                </svg>
+            </button>
+            <div class="modal__head">
+                <span class="modal__eyebrow">Безкоштовна консультація</span>
+                <h2 class="modal__title" id="demoModalTitle">Замовити демо TaskFlow AI</h2>
+                <p class="modal__subtitle">Залиште контакти — наш менеджер покаже, як AI впорається з вашими задачами за 30 хвилин.</p>
+            </div>
+            <form class="modal__form" id="demoForm" novalidate>
+                <label class="modal__field">
+                    <span class="modal__label">Ім'я</span>
+                    <input type="text" name="name" required minlength="2" autocomplete="given-name" placeholder="Олена">
+                </label>
+                <label class="modal__field">
+                    <span class="modal__label">Робоча пошта</span>
+                    <input type="email" name="email" required autocomplete="email" placeholder="olena@company.com">
+                </label>
+                <label class="modal__field">
+                    <span class="modal__label">Компанія</span>
+                    <input type="text" name="company" autocomplete="organization" placeholder="Назва компанії">
+                </label>
+                <label class="modal__field modal__field--check">
+                    <input type="checkbox" name="agree" required>
+                    <span>Погоджуюсь з <a href="#">політикою обробки даних</a></span>
+                </label>
+                <button type="submit" class="btn btn--primary btn--lg btn--block">
+                    Надіслати заявку
+                </button>
+                <p class="modal__success" hidden>Дякуємо! Ми зв'яжемося з вами протягом години ✨</p>
+            </form>
+        </div>
+    </div>
+
+    <script src="vendor/swiper/swiper-bundle.min.js" defer></script>
+    <script src="vendor/glightbox/glightbox.min.js" defer></script>
+    <script src="gallery.js" defer></script>
+    <script src="script.js" defer></script>
+</body>
+</html>

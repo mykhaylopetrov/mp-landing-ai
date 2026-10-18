@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="900" viewBox="0 0 1200 900" role="img" aria-label="Ілюстрація командної аналітики">
+  <defs>
+    <linearGradient id="b" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#10b981"/>
+      <stop offset="1" stop-color="#0ea5e9"/>
+    </linearGradient>
+  </defs>
+  <rect width="1200" height="900" fill="url(#b)"/>
+  <g opacity=".9">
+    <rect x="220" y="480" width="110" height="220" rx="12" fill="#ffffff" opacity=".85"/>
+    <rect x="360" y="380" width="110" height="320" rx="12" fill="#ffffff" opacity=".85"/>
+    <rect x="500" y="430" width="110" height="270" rx="12" fill="#ffffff" opacity=".85"/>
+    <rect x="640" y="300" width="110" height="400" rx="12" fill="#ffffff"/>
+    <rect x="780" y="350" width="110" height="350" rx="12" fill="#ffffff" opacity=".85"/>
+  </g>
+  <text x="600" y="220" font-family="Inter, Arial, sans-serif" font-size="150" text-anchor="middle">📊</text>
+  <text x="600" y="800" font-family="Inter, Arial, sans-serif" font-size="60" font-weight="800" fill="#ffffff" text-anchor="middle">Командна аналітика</text>
+</svg>
